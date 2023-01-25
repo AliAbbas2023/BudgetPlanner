@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Budget Planner</title>
+</head>
+<body>
+    <section name="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+        <div class="container-fluid">
+         <span class="navbar-brand mb-0 h1">Budget Planner</span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./summary.html">Summary</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <div class="container">
+        <h4></h4>
+        <h1 id="balance">$0.00</h1>
+        <div class="inc-exp-container">
+            <div>
+            <h4>Income</h4>
+            <p id="money-plus" class="money-plus">
+                +$0.00
+            </p>
+            </div>
+            <div>
+            <h4>Expenses</h4>
+            <p id="money-plus" class="money-plus">
+                +$0.00
+            </p>
+            </div>
+            <h3>History</h3>
+            <ul>
+                <li class="minus">
+                    Cash <span>-$400</span>
+                    <button class="delete-btn">x</button>
+                </li>
+            </ul>
+
+            <h3>Add New Transition</h3>
+            <form action="" id="form">
+                <div class="form-control">
+                    <label for="Text">Text</label>
+                    <input type="text" id="text" placeholder="Enter Text">
+                </div>
+                <div class="form-control">
+                <label for="Text">Amount</label>
+                <input type="number" id="amount" placeholder="Enter Amount">
+            </div>
+            <button class="btn">All Transection</button>
+            </form>
+    </div>
+    <!-- <div id="mainSummContent">
+        <div class="subheading">
+            <span class="navbar-brand mb-0 h1">Summary</span><br>
+        </div>
+        <div id="showIncome">
+            <span class="navbar-brand mb-0 h1">Total Income : </span>
+        </div>
+      
+    </div> -->
+</body>
+</html>
