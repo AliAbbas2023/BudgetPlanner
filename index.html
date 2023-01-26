@@ -34,6 +34,36 @@
     <div class="container">
         <h4>Total Income</h4>
         <h1 class="balance" id="balance">$0.00</h1>
+        <button class="btn" id="income-panel-btn">Add New Income</button>
+        <button class="btn" id="expense-panel-btn">Add New Expense</button>
+        <div id="incomformcontainer" style="display: none;">
+            <form action="" id="addIncomForm">
+                <div class="form-control">
+                    <label for="Text">Total Income</label>
+                    <input type="number" id="income-amount" placeholder="Enter Amount">
+                </div>
+                <div class="form-control">
+                    <label for="Text">Date</label>
+                    <input type="date" id="income-date" name="income-date">
+                    <!-- <input class ="btn" type="submit"> -->
+                </div>
+            <button class="btn" id="income-add">Add Income</button>
+            </form>
+        </div>
+        <div id="expenseformcontainer" style="display: none;">
+            <h3>Add New Expense</h3>
+            <form action="" id="form">
+                <div class="form-control">
+                    <label for="Text">Amount</label>
+                    <input type="number" id="amount" placeholder="Enter Amount">
+                </div>
+                <div class="form-control">
+                    <label for="Text">Description</label>
+                    <input type="text" id="text" placeholder="Enter Text">
+                </div>
+            <button class="btn">Add Expense</button>
+            </form>
+            </div>
         <div class="inc-exp-container">
             <div>
             <h4>Income</h4>
@@ -48,7 +78,7 @@
             </p>
             </div>
         </div>
-            <h3>History</h3>
+            <h3>Summary</h3>
             <ul id="list" class="list">
                 <!-- <li class="money-plus">
                     Cash <span>$400</span>
@@ -60,19 +90,7 @@
                 </li> -->
             </ul>
 
-            <h3>Add New Expense</h3>
-            <form action="" id="form">
-                <div class="form-control">
-                    <label for="Text">Amount</label>
-                    <input type="number" id="amount" placeholder="Enter Amount">
-                </div>
-                <div class="form-control">
-                    <label for="Text">Description</label>
-                    <input type="text" id="text" placeholder="Enter Text">
-                </div>
-            <button class="btn">Add Expense</button>
-            </form>
-   
+            
     <!-- <div id="mainSummContent">
         <div class="subheading">
             <span class="navbar-brand mb-0 h1">Summary</span><br>
