@@ -26,7 +26,18 @@ function initTransaction(){
     
     updateValues();
 }
+//Update Value to show i.e Income Expense
+function updateValues(){
+    const amount=expense.map(expense=>expense.amount)
+    const total=amount.reduce((acc,curr)=>(acc+=curr),0)
+    
+    // const income=amount.filter(item=>item>0).reduce((acc,curr)=>(acc+=curr),0);
+    // const expense=amount.filter(item=>item<0).reduce((acc,curr)=>(acc+=curr),0)*-1;
+    
+    money_minus.innerText=`$${total}`;
+}
 
+//#region Income Handler
 //Add Static Income
 function addIncome(){
     income+=1000;
@@ -60,10 +71,11 @@ function deductIncome(amount){
     income-=amount;
     balance.innerText=`$${income}`;
 }
+//#region 
 
+//#region Expense Handler
 //Add Expense Data Dynamically Through Inputed Properties
 function addExpense(e){
-
     e.preventDefault();
     if(text.value.trim()==="" || amount.value.trim()===""){
         alert("Please fill all the fields")
@@ -99,19 +111,6 @@ function removeExpense(id){
     addExpenseDOM(expense);
     initTransaction();
 }
-
-//Update Value to show i.e Income Expense
-function updateValues(){
-    const amount=expense.map(expense=>expense.amount)
-    const total=amount.reduce((acc,curr)=>(acc+=curr),0)
-    
-    // const income=amount.filter(item=>item>0).reduce((acc,curr)=>(acc+=curr),0);
-    // const expense=amount.filter(item=>item<0).reduce((acc,curr)=>(acc+=curr),0)*-1;
-    
-    money_minus.innerText=`$${total}`;
-}
-
-
 //Add Expense Data In DOM
 function addExpenseDOM(expense){
 
@@ -125,15 +124,19 @@ function addExpenseDOM(expense){
      
   list.appendChild(item)
 }
+//#region 
 
-form.addEventListener("submit",addExpense)
 
 
+
+
+
+
+//#region Panels
 //Show Income Panel
 function showIncomPanel(){
     document.getElementById("incomformcontainer").style.display="block";
 }
-
 
 //Hide Income Panel
 function hideIncomPanel(){
@@ -148,13 +151,20 @@ function showExpensePanel(){
 function hideExpensePanel(){
     document.getElementById("expenseformcontainer").style.display="none";
 }
-//Add Income Listener
+//#endregion
+
+
+
+//#region Listener Functions
+//IncomePanel Listener
 let button = document.getElementById("income-panel-btn");
 button.addEventListener("click", showIncomPanel);
-
+//IncomeAdd Listener
 let incomeAddBtn=document.getElementById("income-add")
 incomeAddBtn.addEventListener("click",addIncomeThroughForm);
-
+//ExpenseAdd Listener
 let expensePanelBtn=document.getElementById("expense-panel-btn")
 expensePanelBtn.addEventListener("click",showExpensePanel);
-
+//Form Listener
+form.addEventListener("submit",addExpense)
+//#endregion
