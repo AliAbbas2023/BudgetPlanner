@@ -127,3 +127,49 @@ input{
 .list li:hover .delete-btn{
     opacity: 1;
 }
+
+.edit-btn{
+    cursor: pointer;
+    background-color: #7b72df;
+    color: #fff;
+    font-size: 18px;
+    line-height: 20px;
+    position: absolute;
+    top: 50%;
+    margin-left: -40px;
+    transform: translate(-100%,-50%);
+    opacity: 0;
+    transition: opacity 0.3 ease;
+}
+.list li:hover .edit-btn{
+    opacity: 1;
+} 
+
+.detail-btn{
+    cursor: pointer;
+    background-color: #99dd97;
+    color: #fff;
+    font-size: 18px;
+    line-height: 20px;
+    position: absolute;
+    top: 50%;
+    margin-left: -70px;
+    transform: translate(-100%,-50%);
+    opacity: 0;
+    transition: opacity 0.3 ease;
+}
+.list li:hover .detail-btn{
+    opacity: 1;
+} 
+.btndate{
+    cursor: pointer;
+    background-color: #ba90e9;
+    color: #fff;
+    border:0;
+    display: block;
+    margin: 10px 0 30px;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    /* margin-left: 10px; */
+}

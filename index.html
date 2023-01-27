@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="./style.css">
     <title>Budget Planner</title>
 </head>
+
 <body>
     <section name="header">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-        <div class="container-fluid">
-         <span class="navbar-brand mb-0 h1">Budget Planner</span>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./summary.html">Summary</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Budget Planner</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./summary.html">Summary</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </section>
+
     <div class="container">
-        <h4>Total Income</h4>
+       
+        <div class="" id="main" >
+        <h1>Total Income</h1>
         <h1 class="balance" id="balance">$0.00</h1>
         <button class="btn" id="income-panel-btn">Add New Income</button>
-        <button class="btn" id="expense-panel-btn">Add New Expense</button>
+        <button class="btn" id="expense-panel-btn">Add New Expense </button>
+        </div>
+        
+        <!-- Incom Form -->
         <div id="incomformcontainer" style="display: none;">
             <form action="" id="addIncomForm">
                 <div class="form-control">
@@ -45,13 +58,15 @@
                 <div class="form-control">
                     <label for="Text">Date</label>
                     <input type="date" id="income-date" name="income-date">
-                    <!-- <input class ="btn" type="submit"> -->
-                </div>
-            <button class="btn" id="income-add">Add Income</button>
-            </form>
+          
+                 </div>
+                <button class="btn" id="income-add">Add Income</button>
+            </form> 
         </div>
+
+        <!-- Expense Form -->
         <div id="expenseformcontainer" style="display: none;">
-            <h3>Add New Expense</h3>
+            <h3 id="expenseHeading">Add New Expense</h3> 
             <form action="" id="form">
                 <div class="form-control">
                     <label for="Text">Amount</label>
@@ -61,45 +76,66 @@
                     <label for="Text">Description</label>
                     <input type="text" id="text" placeholder="Enter Text">
                 </div>
-            <button class="btn">Add Expense</button>
+                <div class="form-control">
+                    <label for="Text">Date</label>
+                    <input type="date" id="date" name="date">
+                 </div>
+                <button class="btn">Add Expense</button>
             </form>
-            </div>
+        </div>
+
+        <!-- Edit Expense Information -->
+        <div id="editExpenseFormContainer" style="display: none;">
+            <h3 id="expenseHeading">Edit Expense</h3> 
+            <form action="" id="e-form">
+                <div class="form-control">
+                    <label for="Text">Amount</label>
+                    <input type="number" id="e-amount" placeholder="Enter New Amount">
+                </div>
+                <div class="form-control">
+                    <label for="Text">Description</label>
+                    <input type="text" id="e-desc" placeholder="Enter New Description">
+                </div>
+                <button class="btn" id="edit-expense-panel-btn">Edit Expense</button>
+            </form>
+        </div>
+        <!-- Date Filter -->
+        <div class="filterDiv" >
+            <h4>Filter Expense By Date</h4>
+            <div class="form-control ">
+                <label for="Text">Select Start Date</label>
+                <input class="btndate"type="date" id="sdate" name="date">
+                
+                <label for="Text">Select End Date</label>
+                <input class="btndate"type="date" id="edate" name="date">
+
+                <button class="btndate" id="dateFilterBtn" >Get Filter Expense</button>
+             </div>
+            <!-- <button class="btndate" id="" style="float: left"> Select Start Date</button> -->
+            <!-- <button class="btndate" id="" style="float: left">Select End Date</button> -->
+        </div>
+
+        
         <div class="inc-exp-container">
             <div>
-            <h4>Income</h4>
-            <p id="money-plus" class="money-plus">
-                +$0.00
-            </p>
+                <h4>Income</h4>
+                <p id="money-plus" class="money-plus">
+                    +$0.00
+                </p>
             </div>
             <div>
-            <h4>Expenses</h4>
-            <p id="money-minus" class="money-minus">
-                +$0.00
-            </p>
+                <h4>Expenses</h4>
+                <p id="money-minus" class="money-minus">
+                    +$0.00
+                </p>
             </div>
         </div>
-            <h3>Summary</h3>
-            <ul id="list" class="list">
-                <!-- <li class="money-plus">
-                    Cash <span>$400</span>
-                    <button class="delete-btn">x</button>
-                </li>
-                <li class="money-minus">
-                    Burger <span>-$20</span>
-                    <button class="delete-btn">x</button>
-                </li> -->
-            </ul>
 
-            
-    <!-- <div id="mainSummContent">
-        <div class="subheading">
-            <span class="navbar-brand mb-0 h1">Summary</span><br>
-        </div>
-        <div id="showIncome">
-            <span class="navbar-brand mb-0 h1">Total Income : </span>
-        </div>
+        <h3>Summary</h3>
+        <ul id="list" class="list"></ul>
       
-    </div> -->
-    <script src="./script.js"></script>
+    </div>
+        <script src="./JS/script.js"></script>
 </body>
+
 </html>
